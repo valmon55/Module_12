@@ -4,7 +4,18 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            List<User> users = new List<User>();
+
+            users.Add(new User("PJ","Patic",false));
+            users.Add(new User("TL", "Lisbon", true));
+            users.Add(new User("SN", "Sami", false));
+
+            foreach (User user in users) 
+            { 
+                Console.WriteLine($"Hello {user.Name}!");
+                if (!user.IsPremium)
+                    ShowAds();
+            }
         }
         static void ShowAds()
         {

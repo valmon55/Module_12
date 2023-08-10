@@ -4,18 +4,23 @@
     {
         static void Main(string[] args)
         {
-            List<User> users = new List<User>();
+            List<User> _users = new List<User>();
 
-            users.Add(new User("PJ","Patic",false));
-            users.Add(new User("TL", "Lisbon", true));
-            users.Add(new User("SN", "Sami", false));
+            _users.Add(new User("PJ","Patic",false));
+            _users.Add(new User("TL", "Lisbon", true));
+            _users.Add(new User("SN", "Sami", false));
 
-            foreach (User user in users) 
-            { 
+            Process(_users);
+        }
+        static void Process(List<User> users)
+        {
+            foreach (User user in users)
+            {
                 Console.WriteLine($"Hello {user.Name}!");
                 if (!user.IsPremium)
                     ShowAds();
             }
+
         }
         static void ShowAds()
         {
@@ -31,6 +36,7 @@
             // Остановка на 3 с
             Thread.Sleep(3000);
         }
+
     }
 
 }
